@@ -12,10 +12,11 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     //declare variables
-    [SerializeField] private string mouseXInputName, mouseYInputName;
-    [SerializeField] private float mouseSensitivity;
+    [SerializeField] private string mouseXInputName = default;
+    [SerializeField] private string mouseYInputName = default;
+    [SerializeField] private float mouseSensitivity = default;
 
-    [SerializeField] private Transform playerBody;
+    [SerializeField] private Transform playerBody = default;
 
     private float xAxisClamp;
 
