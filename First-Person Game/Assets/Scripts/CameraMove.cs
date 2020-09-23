@@ -32,7 +32,7 @@ public class CameraMove : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         CameraRotation();
     }
