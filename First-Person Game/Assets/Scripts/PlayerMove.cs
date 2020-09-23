@@ -30,8 +30,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float jumpMultiplier = default;
     [SerializeField] private KeyCode jumpKey = default;
 
-
     private bool isJumping;
+    private bool doubleJump;
 
     private void Awake()
     {
@@ -100,6 +100,11 @@ public class PlayerMove : MonoBehaviour
             isJumping = true;
             StartCoroutine(JumpEvent());
         }
+        else if(Input.GetKeyDown(jumpKey) && !doubleJump)
+        {
+            doubleJump = true;
+            StartCoroutine(JumpEvent());
+        }
     }
 
     private IEnumerator JumpEvent()
@@ -117,6 +122,7 @@ public class PlayerMove : MonoBehaviour
 
         charController.slopeLimit = 45.0f;
         isJumping = false;
+        doubleJump = false;
     }
 
 }
